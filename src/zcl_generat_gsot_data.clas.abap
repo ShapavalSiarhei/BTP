@@ -14,23 +14,25 @@ CLASS zcl_generat_gsot_data IMPLEMENTATION.
 
     DATA(key1) = cl_system_uuid=>create_uuid_x16_static( ).
     DATA(key2) = cl_system_uuid=>create_uuid_x16_static( ).
+    DATA date TYPE timestampl.
+    GET TIME STAMP FIELD date.
     sources = VALUE #( dev_object      = 'TABLE'
                        link            = 'https://sap.com'
                        created_by      = sy-uname
-                       created_at      = '20230813111129.2391370'
+                       created_at      = date
                        last_changed_by = sy-uname
-                       last_changed_at = '20230813111129.2391370'
+                       last_changed_at = date
                        ( uuid          = key1
                          source_system = 'DS1'
-                         iface_object  = 'Standard' )
+                         iface_object  = 'P' )
                        ( uuid          = key2
                          source_system = 'BTP'
-                         iface_object  = 'Custom' ) ).
+                         iface_object  = 'C' ) ).
 
     source_details = VALUE #( created_by      = sy-uname
-                              created_at      = '20230813111129.2391370'
+                              created_at      = date
                               last_changed_by = sy-uname
-                              last_changed_at = '20230813111129.2391370'
+                              last_changed_at = date
                               ( dsrc_uuid    = key1
                                 source_table = 'MARA'
                                 source_field = 'MTART'

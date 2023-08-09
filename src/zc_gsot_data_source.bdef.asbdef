@@ -1,0 +1,19 @@
+projection;
+strict ( 1 );
+
+define behavior for zc_gsot_data_source alias DataSource
+{
+  use create;
+  use update;
+  use delete;
+
+  use association _DataSourceDetails { create; }
+}
+
+define behavior for zc_gsot_data_source_det alias Details
+{
+  use update;
+  use delete;
+
+  use association _DataSource;
+}

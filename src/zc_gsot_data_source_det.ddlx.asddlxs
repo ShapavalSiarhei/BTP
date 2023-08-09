@@ -1,0 +1,37 @@
+@Metadata.layer: #CUSTOMER
+@UI:{ headerInfo: { typeName: 'Data Source Details',
+                    typeNamePlural: 'Data Source Details' }}
+annotate entity zc_gsot_data_source_det with
+{
+  @UI.facet : [{ id      : 'DSDetails',
+                 type    : #COLLECTION,
+                 label   : 'Details',
+                 position: 10 },
+               { id      : 'Details',
+                 parentId: 'DSDetails',
+                 type    : #FIELDGROUP_REFERENCE,
+                 targetQualifier : 'SRCD',
+                 purpose : #STANDARD,
+                 label   : 'Details',
+                 position: 15 }]
+  @UI.hidden: true
+  Uuid;
+  @UI.hidden: true
+  DsrcUuid;
+
+  @UI.lineItem: [{ position: 10, importance: #HIGH }]
+  @UI.fieldGroup: [{ qualifier: 'SRCD', position: 10 }]
+  SourceTable;
+  @UI.lineItem: [{ position: 20, importance: #HIGH }]
+  @UI.fieldGroup: [{ qualifier: 'SRCD', position: 10 }]
+  SourceField;
+
+  @UI.fieldGroup: [{ qualifier: 'SRCD', position: 50 }]
+  CreatedBy;
+  @UI.fieldGroup: [{ qualifier: 'SRCD', position: 51 }]
+  CreatedAt;
+  @UI.fieldGroup: [{ qualifier: 'SRCD', position: 52 }]
+  LastChangedBy;
+  @UI.fieldGroup: [{ qualifier: 'SRCD', position: 53 }]
+  LastChangedAt;
+}

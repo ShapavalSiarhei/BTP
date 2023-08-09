@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service Definition for GSOT Data Source'
+define service ZUI_GSOT_DATA_SOURCE {
+  expose zc_gsot_data_source;
+  expose zc_gsot_data_source_det;
+}

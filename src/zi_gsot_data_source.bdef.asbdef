@@ -1,0 +1,57 @@
+managed implementation in class zbp_i_gsot_data_source unique;
+strict ( 1 );
+
+define behavior for zi_gsot_data_source alias DataSource
+persistent table zdb_gsot_datasrc
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+  association _DataSourceDetails { create; }
+
+  field ( readonly, numbering : managed ) Uuid;
+  field ( readonly ) CreatedBy, CreatedAt, LastChangedAt, LastChangedBy;
+  mapping for zdb_gsot_datasrc
+    {
+
+      Uuid          = uuid;
+      SourceSystem  = source_system;
+      IfaceObject   = iface_object;
+      DevObject     = dev_object;
+      Link          = link;
+      CreatedBy     = created_by;
+      CreatedAt     = created_at;
+      LastChangedBy = last_changed_by;
+      LastChangedAt = last_changed_at;
+    }
+
+}
+
+define behavior for zi_gsot_data_source_det alias Details
+persistent table zdb_gsot_dsrcdet
+lock dependent by _DataSource
+authorization dependent by _DataSource
+//etag master <field_name>
+{
+  update;
+  delete;
+  association _DataSource;
+
+  field ( readonly, numbering : managed ) Uuid;
+  field ( readonly ) DsrcUuid;
+  field ( readonly ) CreatedBy, CreatedAt, LastChangedAt, LastChangedBy;
+  mapping for zdb_gsot_dsrcdet
+    {
+      Uuid          = uuid;
+      DsrcUuid      = dsrc_uuid;
+      SourceTable   = source_table;
+      SourceField   = source_field;
+      CreatedBy     = created_by;
+      CreatedAt     = created_at;
+      LastChangedBy = last_changed_by;
+      LastChangedAt = last_changed_at;
+    }
+ }

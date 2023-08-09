@@ -2,6 +2,7 @@
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @Metadata.allowExtensions: true
 define root view entity zc_gsot_data_source
+  provider contract transactional_query
   as projection on zi_gsot_data_source
 {
   key Uuid,
