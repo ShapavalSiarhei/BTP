@@ -11,10 +11,10 @@
     <SCRLEN2>20</SCRLEN2>
     <SCRLEN3>40</SCRLEN3>
     <DDTEXT>Interface Object</DDTEXT>
-    <REPTEXT>Interface Type</REPTEXT>
-    <SCRTEXT_S>IFace Type</SCRTEXT_S>
-    <SCRTEXT_M>Interface Type</SCRTEXT_M>
-    <SCRTEXT_L>Interface Type</SCRTEXT_L>
+    <REPTEXT>System Type</REPTEXT>
+    <SCRTEXT_S>Syst Type</SCRTEXT_S>
+    <SCRTEXT_M>System Type</SCRTEXT_M>
+    <SCRTEXT_L>System Type</SCRTEXT_L>
     <DTELMASTER>E</DTELMASTER>
     <REFKIND>D</REFKIND>
     <ABAP_LANGUAGE_VERSION>5</ABAP_LANGUAGE_VERSION>

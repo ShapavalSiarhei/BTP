@@ -28,6 +28,7 @@ annotate entity zc_gsot_data_source with
   SourceSystem;
   @UI.lineItem: [{ position: 20, importance: #HIGH }]
   @UI.fieldGroup: [{ qualifier: 'SRC', position: 20 }]
+  @UI.selectionField: [{position: 10}]
   IfaceObject;
   @UI.lineItem: [{ position: 30, importance: #HIGH }]
   @UI.fieldGroup: [{ qualifier: 'SRC', position: 30 }]
@@ -35,6 +36,11 @@ annotate entity zc_gsot_data_source with
   @UI.lineItem: [{ position: 40, importance: #HIGH }]
   @UI.fieldGroup: [{ qualifier: 'SRC', position: 40 }]
   Link;
+
+  @UI.hidden: true
+  SystemTypeTxt;
+  @UI.hidden: true
+  SystemName;
 
   @UI.fieldGroup: [{ qualifier: 'SRC', position: 50 }]
   CreatedBy;

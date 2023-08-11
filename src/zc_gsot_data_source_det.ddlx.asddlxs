@@ -23,7 +23,7 @@ annotate entity zc_gsot_data_source_det with
   @UI.fieldGroup: [{ qualifier: 'SRCD', position: 10 }]
   SourceTable;
   @UI.lineItem: [{ position: 20, importance: #HIGH }]
-  @UI.fieldGroup: [{ qualifier: 'SRCD', position: 10 }]
+  @UI.fieldGroup: [{ qualifier: 'SRCD', position: 20 }]
   SourceField;
 
   @UI.fieldGroup: [{ qualifier: 'SRCD', position: 50 }]

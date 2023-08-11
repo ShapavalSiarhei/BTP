@@ -10,6 +10,7 @@
 define view entity zb_gsot_data_source
   as select from zdb_gsot_datasrc
 {
+
   key uuid            as Uuid,
       source_system   as SourceSystem,
       iface_object    as IfaceObject,
