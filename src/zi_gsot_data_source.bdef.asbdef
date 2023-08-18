@@ -5,6 +5,7 @@ define behavior for zi_gsot_data_source alias DataSource
 persistent table zdb_gsot_datasrc
 lock master
 authorization master ( instance )
+with additional save
 //etag master <field_name>
 {
   create;
@@ -13,26 +14,27 @@ authorization master ( instance )
   association _DataSourceDetails { create; }
 
   field ( readonly, numbering : managed ) Uuid;
+  field ( mandatory : create, readonly : update ) SourceID; //
   field ( mandatory ) SourceSystem;
   field ( readonly ) DevObject, CreatedBy, CreatedAt, LastChangedAt, LastChangedBy;
 
   validation checkSource on save { field IfaceObject, SourceSystem; }
   validation checkMandatory on save { create; update; }
 
-  validation checkAlternativeKey on save { create; update; }
-
   determination setSourceType on modify { create; }
   mapping for zdb_gsot_datasrc
     {
-      Uuid          = uuid;
-      SourceSystem  = source_system;
-      IfaceObject   = iface_object;
-      DevObject     = dev_object;
-      Link          = link;
-      CreatedBy     = created_by;
-      CreatedAt     = created_at;
-      LastChangedBy = last_changed_by;
-      LastChangedAt = last_changed_at;
+      Uuid              = uuid;
+      SourceID          = source_id;
+      SourceSystem      = source_system;
+      IfaceObject       = iface_object;
+      DevObject         = dev_object;
+      Link              = link;
+      SourceDescription = source_descr;
+      CreatedBy         = created_by;
+      CreatedAt         = created_at;
+      LastChangedBy     = last_changed_by;
+      LastChangedAt     = last_changed_at;
     }
  }
 

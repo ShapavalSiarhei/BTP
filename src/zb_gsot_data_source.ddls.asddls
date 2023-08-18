@@ -12,7 +12,9 @@ define view entity zb_gsot_data_source
 {
 
   key uuid            as Uuid,
+      source_id       as SourceID,
       source_system   as SourceSystem,
+      source_descr    as SourceDescription,
       iface_object    as IfaceObject,
       dev_object      as DevObject,
       link            as Link,

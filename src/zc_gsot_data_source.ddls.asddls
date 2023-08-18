@@ -1,7 +1,7 @@
 @EndUserText.label: 'GSOT Data Source'
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @Metadata.allowExtensions: true
-@ObjectModel.semanticKey: ['SourceSystem', 'IfaceObject']
+@ObjectModel.semanticKey: ['SourceID']
 @ObjectModel.representativeKey: 'Uuid'
 define root view entity zc_gsot_data_source
   provider contract transactional_query
@@ -9,6 +9,7 @@ define root view entity zc_gsot_data_source
 
 {
   key Uuid,
+      SourceID,
       @ObjectModel.text.element: ['SystemName']
       @Consumption.valueHelpDefinition: [{ entity.name: 'ZI_GSOT_SRC_SYSTEM_VH', entity.element: 'SystemID' }]
       SourceSystem,
@@ -17,6 +18,7 @@ define root view entity zc_gsot_data_source
       IfaceObject,
       DevObject,
       Link,
+      SourceDescription,
       CreatedBy,
       CreatedAt,
       LastChangedBy,

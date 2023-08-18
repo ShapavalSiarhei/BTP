@@ -23,6 +23,9 @@ annotate entity zc_gsot_data_source with
                   position: 20 }]
   @UI.hidden: true
   Uuid;
+  @UI.lineItem: [{ position: 5, importance: #HIGH }]
+  @UI.fieldGroup: [{ qualifier: 'SRC', position: 5 }]
+  SourceID;
   @UI.lineItem: [{ position: 10, importance: #HIGH }]
   @UI.fieldGroup: [{ qualifier: 'SRC', position: 10 }]
   SourceSystem;
@@ -33,6 +36,9 @@ annotate entity zc_gsot_data_source with
   @UI.lineItem: [{ position: 30, importance: #HIGH }]
   @UI.fieldGroup: [{ qualifier: 'SRC', position: 30 }]
   DevObject;
+  @UI.lineItem: [{ position: 35, importance: #HIGH }]
+  @UI.fieldGroup: [{ qualifier: 'SRC', position: 35 }]
+  SourceDescription;
   @UI.lineItem: [{ position: 40, importance: #HIGH }]
   @UI.fieldGroup: [{ qualifier: 'SRC', position: 40 }]
   Link;
@@ -42,12 +48,12 @@ annotate entity zc_gsot_data_source with
   @UI.hidden: true
   SystemName;
 
-  @UI.fieldGroup: [{ qualifier: 'SRC', position: 50 }]
+  @UI.fieldGroup: [{ qualifier: 'SRC', position: 50, label: 'Created By' }]
   CreatedBy;
-  @UI.fieldGroup: [{ qualifier: 'SRC', position: 51 }]
+  @UI.fieldGroup: [{ qualifier: 'SRC', position: 51, label: 'Created At' }]
   CreatedAt;
-  @UI.fieldGroup: [{ qualifier: 'SRC', position: 52 }]
+  @UI.fieldGroup: [{ qualifier: 'SRC', position: 52, label: 'Changed By' }]
   LastChangedBy;
-  @UI.fieldGroup: [{ qualifier: 'SRC', position: 53 }]
+  @UI.fieldGroup: [{ qualifier: 'SRC', position: 53, label: 'Changed At' }]
   LastChangedAt;
 }

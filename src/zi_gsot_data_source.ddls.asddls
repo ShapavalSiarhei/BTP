@@ -8,10 +8,12 @@ define root view entity zi_gsot_data_source
 {
 
   key Uuid,
+      SourceID,
       SourceSystem,
       IfaceObject,
       DevObject,
       Link,
+      SourceDescription,
       CreatedBy,
       CreatedAt,
       LastChangedBy,

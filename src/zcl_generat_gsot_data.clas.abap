@@ -23,9 +23,11 @@ CLASS zcl_generat_gsot_data IMPLEMENTATION.
                        last_changed_by = sy-uname
                        last_changed_at = date
                        ( uuid          = key1
+                         source_id = 'DS1'
                          source_system = 'DS1'
                          iface_object  = 'P' )
                        ( uuid          = key2
+                         source_id = 'BTP'
                          source_system = 'BTP'
                          iface_object  = 'C' ) ).
 
